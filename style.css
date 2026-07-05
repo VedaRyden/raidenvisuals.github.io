@@ -92,10 +92,12 @@ body {
     
     /* Memposisikan kontainer di tengah layar */
     display: flex;
+    flex-direction: column; /* Menyusun elemen dari atas ke bawah */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px; /* Memberi ruang di atas dan bawah halaman */
+    /* Kode background-image Anda tetap biarkan di sini */
 }
 
 .container {
