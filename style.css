@@ -37,7 +37,7 @@
 
 /* Efek animasi interaktif saat kursor diarahkan ke ikon */
 .social-link img:hover {
-    transform: scale(1.15);    /* Ikon akan sedikit membesar/menonjol saat disentuh kursor */
+    transform: scale(1.5);    /* Ikon akan sedikit membesar/menonjol saat disentuh kursor */
 }
 
 /* Mengatur pembungkus logo agar berada di tengah halaman */
