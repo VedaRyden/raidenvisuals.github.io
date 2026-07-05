@@ -10,6 +10,16 @@
     height: 32px;        /* Tinggi gambar */
     object-fit: contain; /* Memastikan gambar tidak gepeng/terdistorsi */
 }
+/* Memaksa gambar ikon utama agar berukuran kecil dan rapi */
+.main-page-icon {
+    width: 120px !important;   /* Mengunci lebar gambar menjadi 120 pixel */
+    height: 120px !important;  /* Mengunci tinggi gambar menjadi 120 pixel */
+    object-fit: contain;
+    border-radius: 12px;       /* Membuat sudut gambar sedikit melengkung halus */
+    margin: 0 auto 15px auto;  /* Memposisikan otomatis di tengah dan memberi jarak bawah */
+    display: block;            /* Memastikan gambar mengambil ruang terpisah */
+}
+
 #searchInput {
     width: 100%;
     padding: 10px 15px;
