@@ -4,24 +4,25 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-/* Mengatur kotak pembungkus video player */
+/* Mengatur kotak pembungkus video YouTube */
 .video-container {
     width: 100%;
-    max-width: 500px;         /* Lebar disamakan persis dengan kotak download di bawahnya */
-    aspect-ratio: 16 / 9;     /* Rasio standar video landscape */
-    margin-bottom: 25px;      /* Jarak space antara video dengan kotak download bawah */
+    max-width: 500px;         /* Lebar disamakan dengan kontainer download Anda */
+    aspect-ratio: 16 / 9;     /* Rasio standar video YouTube landscape */
+    margin-bottom: 25px;      /* Jarak aman dengan kotak di bawahnya */
     border-radius: 12px;      /* Sudut melengkung halus */
     overflow: hidden;         /* Memotong ujung video agar ikut melengkung */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #333333;
 }
 
-/* Mengatur ukuran frame video di dalamnya */
+/* Memastikan iframe YouTube mengisi penuh kotak pembungkus */
 .video-container iframe {
     width: 100%;
     height: 100%;
     border: none;
 }
+
 
 /* Mengatur kotak hitam panjang untuk media sosial */
 /* Mengatur kotak hitam sosmed agar selalu menempel mati di bawah layar */
