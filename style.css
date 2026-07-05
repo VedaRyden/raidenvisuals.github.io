@@ -5,19 +5,27 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 /* Mengatur kotak hitam panjang untuk media sosial */
+/* Mengatur kotak hitam sosmed agar selalu menempel mati di bawah layar */
 .social-media-container {
-    background-color: #181818; /* Warna hitam gelap yang senada dengan container atas */
-    padding: 15px 25px;
+    background-color: #181818; 
+    padding: 12px 25px;
     border-radius: 12px;
-    margin-top: 25px;          /* Jarak space antara kotak download dengan kotak sosmed */
     display: flex;
-    justify-content: center;   /* Membuat ikon berjejer rapi tepat di tengah */
+    justify-content: center;   
     align-items: center;
-    gap: 20px;                 /* Memberikan jarak renggang yang pas antar setiap ikon */
-    width: 100%;
-    max-width: 500px;          /* Lebar maksimal disamakan dengan container atas agar sejajar simetris */
+    gap: 20px;                 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid #333333; /* Menambahkan garis tepi tipis agar kotak terlihat tegas */
+
+    /* KODE UTAMA UNTUK MENEMPEL DI LAYAR */
+    position: fixed;           /* Mengunci posisi elemen dari gulungan scroll */
+    bottom: 20px;              /* Jarak konstan dari batas bawah layar browser */
+    left: 50%;                 /* Geser posisi titik awal ke tengah */
+    transform: translateX(-50%); /* Trik CSS agar kotak benar-benar berada pas di tengah layar */
+    width: auto;               /* Lebar kotak otomatis mengikuti jumlah ikon di dalamnya */
+    z-index: 9999;             /* Memastikan kotak sosmed selalu berada di lapisan paling depan */
 }
+
 
 /* Mengatur ukuran gambar ikon sosial media */
 .social-link img {
@@ -124,6 +132,7 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 40px 20px; /* Memberi ruang di atas dan bawah halaman */
+    padding-bottom: 90px !important; 
     /* Kode background-image Anda tetap biarkan di sini */
 }
 
