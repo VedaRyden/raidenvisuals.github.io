@@ -4,21 +4,7 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-body {
-    /* Mengatur gambar sebagai background penuh */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/background.jpg');
-    background-size: cover;          /* Memastikan gambar menutup seluruh layar */
-    background-position: center;     /* Posisi gambar selalu di tengah */
-    background-attachment: fixed;    /* Gambar tetap diam saat halaman di-scroll */
-    background-repeat: no-repeat;    /* Mencegah gambar berulang/pecah */
-    
-    /* Memposisikan kontainer di tengah layar */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
+
 
 /* Mengatur ukuran dan bentuk icon gambar PNG */
 .file-icon-img {
@@ -79,7 +65,14 @@ html {
 }
 
 body {
-    background-color: #f4f7f6;
+    /* Mengatur gambar sebagai background penuh */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/background.jpg');
+    background-size: cover;          /* Memastikan gambar menutup seluruh layar */
+    background-position: center;     /* Posisi gambar selalu di tengah */
+    background-attachment: fixed;    /* Gambar tetap diam saat halaman di-scroll */
+    background-repeat: no-repeat;    /* Mencegah gambar berulang/pecah */
+    
+    /* Memposisikan kontainer di tengah layar */
     display: flex;
     justify-content: center;
     align-items: center;
