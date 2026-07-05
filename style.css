@@ -8,7 +8,7 @@
 @font-face {
     font-family: 'MinecraftTen';
     src: url('MinecraftTen.otf') format('opentype');
-    font-weight: 1000;
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -21,6 +21,7 @@
 }
 /* Terapkan font TEBAL ke Judul dan Sub-judul */
 h1, h2, .desc-title-bold {
+    font-size: 32px !important;    /* Diperbesar dari 24px */
     font-family: 'MinecraftTen', sans-serif !important;
 }
 
@@ -28,11 +29,24 @@ h1, h2, .desc-title-bold {
 body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     font-family: 'MinecraftSeven', sans-serif !important;
 }
+/* Mengatur sub-judul di kotak deskripsi bawah */
+.desc-title-bold {
+    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-size: 24px !important;    /* Diperbesar dari 18px */
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
 
+/* 2. Mengatur ISI TEKS (Font Tipis) agar LEBIH BESAR dan mudah dibaca */
+.desc-text-light, .desc-list li {
+    font-family: 'RaidenCustomLight', sans-serif !important;
+    font-size: 17px !important;    /* Diperbesar dari 14px */
+    line-height: 1.7;              /* Jarak antar baris kalimat agar tidak menempel rapat */
+}
 /* Mengatur kotak pembungkus video YouTube */
 .video-container {
     width: 100%;
-    max-width: 750px;
+    max-width: 725px;
     height: auto;             /* Mengubah tinggi kaku menjadi otomatis */
     aspect-ratio: 16 / 9;     /* Mengunci aspek rasio asli YouTube */
     border-radius: 12px;
