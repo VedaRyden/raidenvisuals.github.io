@@ -11,7 +11,6 @@
     font-weight: 700;
     font-style: normal;
 }
-
 /* 2. Daftarkan Font Tipis (TTF) */
 @font-face {
     font-family: 'MinecraftSeven';
@@ -24,7 +23,6 @@ h1, h2, .desc-title-bold {
     font-size: 32px !important;    /* Diperbesar dari 24px */
     font-family: 'MinecraftTen', sans-serif !important;
 }
-
 /* Terapkan font TIPIS ke isi teks, deskripsi, dan list */
 body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     font-family: 'MinecraftSeven', sans-serif !important;
@@ -36,7 +34,6 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     margin-top: 25px;
     margin-bottom: 12px;
 }
-
 /* 2. Mengatur ISI TEKS (Font Tipis) agar LEBIH BESAR dan mudah dibaca */
 .desc-text-light, .desc-list li {
     font-family: 'RaidenCustomLight', sans-serif !important;
@@ -66,13 +63,11 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     margin-top: 30px;  /* Jarak space dari kotak video & download di atasnya */
     margin-bottom: 40px; /* Jarak aman sebelum menyentuh menu sosmed bawah */
 }
-
 .description-full-container h2 {
     color: #ff2222;    /* Warna judul deskripsi merah khas Raiden */
     font-size: 20px;
     margin-bottom: 15px;
 }
-
 .description-full-container p {
     color: #ffffff;    /* Warna teks isi deskripsi putih bersih */
     font-size: 14px;
