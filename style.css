@@ -139,21 +139,37 @@ html {
 
 body {
     /* Mengatur gambar sebagai background penuh */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px 120px 20px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/background.jpg');
     background-size: cover;          /* Memastikan gambar menutup seluruh layar */
     background-position: center;     /* Posisi gambar selalu di tengah */
     background-attachment: fixed;    /* Gambar tetap diam saat halaman di-scroll */
     background-repeat: no-repeat;    /* Mencegah gambar berulang/pecah */
-    
-    /* Memposisikan kontainer di tengah layar */
+}
+/* Mengatur tata letak video (kiri) dan download card (kanan) */
+.main-content-row {
     display: flex;
-    flex-direction: column; /* Menyusun elemen dari atas ke bawah */
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 40px 20px; /* Memberi ruang di atas dan bawah halaman */
-    padding-bottom: 90px !important; 
-    /* Kode background-image Anda tetap biarkan di sini */
+    flex-direction: row;        /* Memposisikan konten berjejer ke samping */
+    justify-content: center;    /* Memposisikan kedua kotak pas di tengah layar */
+    align-items: flex-start;    /* Menyejajarkan bagian atas kedua kotak agar rata */
+    gap: 40px;                  /* Memberikan jarak renggang yang pas antara video dan kotak download */
+    width: 100%;
+    max-width: 1100px;          /* Lebar maksimal gabungan kedua kotak */
+    margin-top: 10px;
+}
+
+/* Responsif: Jika dibuka di HP yang layarnya sempit, otomatis otomatis menumpuk ke bawah lagi */
+@media (max-width: 900px) {
+    .main-content-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
 }
 
 .container {
