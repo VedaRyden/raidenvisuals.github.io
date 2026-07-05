@@ -21,7 +21,7 @@
 }
 /* Untuk browser modern seperti Chrome, Edge, Firefox, dan Safari */
 html {
-    scrollbar-color: #ff2222 #222222; /* Warna batang (merah) & warna latar (hitam/gelap) */
+    scrollbar-color: #ff0000 #ff2222; /* Warna batang (merah) & warna latar (hitam/gelap) */
     scrollbar-width: smooth;           /* Membuat ukuran scrollbar menjadi proporsional */
 }
 
