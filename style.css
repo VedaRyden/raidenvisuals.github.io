@@ -10,6 +10,20 @@
     height: 32px;        /* Tinggi gambar */
     object-fit: contain; /* Memastikan gambar tidak gepeng/terdistorsi */
 }
+#searchInput {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+#searchInput:focus {
+    border-color: #2ecc71;
+}
 
 body {
     background-color: #f4f7f6;
