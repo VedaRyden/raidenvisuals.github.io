@@ -113,30 +113,10 @@ html {
     border-radius: 6px;  /* Membuat ujung batang scrollbar melengkung halus */
     border: 3px solid #1a1a1a; /* Memberi jarak aman antara batang dan jalur luar */
 }
-
 /* Efek saat batang scrollbar diarahkan oleh kursor (hover) */
 ::-webkit-scrollbar-thumb:hover {
     background: #cc1111; /* Warna merah akan sedikit lebih gelap saat disentuh */
 }
-
-#searchInput {
-    width: 100%;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    border: 1px solid #333;
-    border-radius: 6px;
-    font-size: 14px;
-    outline: none;
-    background-color: #222; /* Latar belakang input abu-abu sangat gelap */
-    color: #ffffff; /* Warna teks ketikan menjadi putih */
-    transition: border 0.2s;
-}
-
-#searchInput:focus {
-    border-color: #ff2222; /* Garis tepi menyala merah saat diklik */
-}
-
-
 body {
     /* Mengatur gambar sebagai background penuh */
     display: flex;
@@ -171,7 +151,6 @@ body {
         gap: 25px;
     }
 }
-
 .container {
     background: #181818; /* Mengubah kotak utama menjadi hitam gelap */
     padding: 30px;
@@ -180,51 +159,43 @@ body {
     width: 100%;
     max-width: 500px;
 }
-
-
 h1 {
     color: #ffffff; /* Mengubah teks judul menjadi putih bersih */
     font-size: 24px;
     margin-bottom: 8px;
     text-align: center;
 }
-
 .subtitle {
     color: #bbb; /* Mengubah deskripsi menjadi abu-abu terang agar tidak silau */
     font-size: 14px;
     margin-bottom: 25px;
     text-align: center;
 }
-
-
-
+/* Mencegah nama file menabrak tombol download */
 .download-card {
-    background: #222222; /* Mengubah warna kartu menjadi abu-abu gelap */
-    border: 1px solid #ff0000; /* Garis tepi yang tipis dan gelap */
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px; /* Memberi jarak aman antara teks dan tombol */
+    width: 100%;
 }
-
 .file-info {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex: 1; /* Membuat teks mengambil ruang sisa secara fleksibel */
+    min-width: 0; /* Mencegah teks meluap keluar */
 }
-
+.file-name {
+    word-break: break-word; /* Memaksa teks panjang otomatis turun ke bawah jika mentok */
+}
+/* Memastikan daftar download card turun ke bawah penuh setelah baris video-container */
+.main-content-row {
+    flex-wrap: wrap; /* Mengizinkan konten di bawahnya turun dengan rapi */
+}
 .file-icon {
     font-size: 28px;
 }
-
-.file-name {
-    font-weight: 600;
-    color: #ffffff; /* Mengubah nama file menjadi warna putih */
-    font-size: 15px;
-}
-
 .file-size {
     font-size: 12px;
     color: #aaa; /* Mengubah ukuran file menjadi abu-abu terang */
