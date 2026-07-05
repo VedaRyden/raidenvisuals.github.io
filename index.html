@@ -9,34 +9,37 @@
     <link rel="icon" type="image/png" href="img/pack_icon.png">
 </head>
 
-    
 <body>
-
     <!-- Tambahkan baris logo Minecraft di bawah ini (di luar container) -->
 <!-- Banner Minecraft Anda yang sudah ada -->
+<!-- Banner Minecraft Anda tetap di atas sendirian -->
 <div class="top-banner-wrapper">
     <img src="img/title.png" alt="Minecraft With Raiden Visuals" class="minecraft-title-logo">
 </div>
 
-<div class="video-container">
-    <iframe 
-        src="https://youtube.com/embed/EFGAV0GaRUc"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-</div>
+<!-- KODE BARU: Tambahkan tag pembungkus baris di sini -->
+<div class="main-content-row">
 
-
-<!-- Kotak kontainer unduhan Anda yang sudah ada -->
-<div class="container">
-    <div class="main-icon-wrapper">
-...
-
-        <img src="img/pack_icon.png" alt="Logo Raiden Visuals" class="main-page-icon">
+    <!-- Video Player (Sisi Kiri) -->
+    <div class="video-container">
+        <iframe 
+            src="https://youtube.com/embed/EFGAV0GaRUc"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
     </div>
-    <h1>Raiden Visuals v2.0+ Free Download</h1>
-        <p class="subtitle">Pilih Salah Satu untuk versi stable dan beta, Untuk User Android Harap Gunakan salah satu Launcher seperti MB Loader, Levi Launcher, Ambient for MCPE dan Flarial Client agar dapat berfungsi.</p>
-<!-- Tambahkan input ini di bawah class="subtitle" -->
+
+    <!-- Kotak Kontainer Unduhan (Sisi Kanan) -->
+    <div class="container">
+        <div class="main-icon-wrapper">
+            <img src="img/pack_icon.png" alt="Logo" class="main-page-icon">
+        </div>
+        <h1>Raiden Visuals v2.0+ Free Download</h1>
+        <!-- Sisa kode download card dan input cari file Anda tetap di sini -->
+    </div>
+
+</div> <!-- KODE BARU: Penutup dari main-content-row -->
+
 <input type="text" id="searchInput" placeholder="Cari file...">
 
 <!-- Sisa kode download-card tetap sama seperti sebelumnya -->
