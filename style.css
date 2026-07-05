@@ -5,6 +5,21 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Mengatur pembungkus logo agar berada di tengah halaman */
+.top-banner-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 25px; /* Jarak antara logo Minecraft dengan kotak hitam di bawahnya */
+}
+
+/* Mengatur ukuran dan responsivitas logo Minecraft */
+.minecraft-title-logo {
+    max-width: 550px;    /* Batas lebar maksimal logo (bisa Anda sesuaikan) */
+    width: 90%;          /* Agar logo otomatis mengecil secara rapi saat dibuka di HP */
+    height: auto;        /* Menjaga proporsi gambar agar tidak gepeng */
+    object-fit: contain;
+}
 
 /* Mengatur ukuran dan bentuk icon gambar PNG */
 .file-icon-img {
