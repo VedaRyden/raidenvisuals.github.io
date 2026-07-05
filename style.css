@@ -29,8 +29,8 @@
 
 /* Mengatur ukuran gambar ikon sosial media */
 .social-link img {
-    width: 64px;               /* Lebar ukuran ikon */
-    height: 64px;              /* Tinggi ukuran ikon */
+    width: 32px;               /* Lebar ukuran ikon */
+    height: 32px;              /* Tinggi ukuran ikon */
     object-fit: contain;
     transition: transform 0.2s ease; /* Menambahkan efek animasi halus saat disentuh */
 }
