@@ -7,8 +7,9 @@
 /* Mengatur kotak pembungkus video YouTube */
 .video-container {
     width: 100%;
-    max-width: 650px; /* Diperbesar dari 500px */
-    aspect-ratio: 16 / 9; /* Mengunci rasio video besar standar YouTube */
+    max-width: 650px;
+    height: auto;             /* Mengubah tinggi kaku menjadi otomatis */
+    aspect-ratio: 16 / 9;     /* Mengunci aspek rasio asli YouTube */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
@@ -21,10 +22,8 @@
     width: 100%;
     height: 100%;
     border: none;
-    object-fit: cover;        /* Memastikan video memenuhi kotak tanpa memotong bagian penting */
+    object-fit: cover; /* KODE UTAMA: Memaksa video memotong sedikit bagian samping agar penuh tanpa garis hitam */
 }
-
-/* Mengatur kotak hitam panjang untuk media sosial */
 /* Mengatur kotak hitam sosmed agar selalu menempel mati di bawah layar */
 .social-media-container {
     background-color: #181818; 
@@ -157,7 +156,7 @@ body {
     padding: 35px; /* Ditambah sedikit agar ruang dalam kotak hitam lebih lega */
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    border: 1px solid #333333;
+    border: 1px solid #ff0000;
     width: 100%;
     max-width: 650px; /* Diperbesar dari 500px agar sejajar dengan video baru */
     height: auto;
