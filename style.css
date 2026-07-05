@@ -23,7 +23,7 @@
 }
 /* Untuk browser modern seperti Chrome, Edge, Firefox, dan Safari */
 html {
-    scrollbar-color: #ff0000 #ff2222; /* Warna batang (merah) & warna latar (hitam/gelap) */
+    scrollbar-color: #ff0000 #222222; /* Warna batang (merah) & warna latar (hitam/gelap) */
     scrollbar-width: smooth;           /* Membuat ukuran scrollbar menjadi proporsional */
 }
 
@@ -53,16 +53,19 @@ html {
     width: 100%;
     padding: 10px 15px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     border-radius: 6px;
     font-size: 14px;
     outline: none;
+    background-color: #222; /* Latar belakang input abu-abu sangat gelap */
+    color: #ffffff; /* Warna teks ketikan menjadi putih */
     transition: border 0.2s;
 }
 
 #searchInput:focus {
-    border-color: #2ecc71;
+    border-color: #ff2222; /* Garis tepi menyala merah saat diklik */
 }
+
 
 body {
     /* Mengatur gambar sebagai background penuh */
@@ -81,31 +84,34 @@ body {
 }
 
 .container {
-    background: #ffffff;
+    background: #181818; /* Mengubah kotak utama menjadi hitam gelap */
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Bayangan lebih gelap dan tegas */
     width: 100%;
     max-width: 500px;
 }
 
+
 h1 {
-    color: #333;
+    color: #ffffff; /* Mengubah teks judul menjadi putih bersih */
     font-size: 24px;
     margin-bottom: 8px;
     text-align: center;
 }
 
 .subtitle {
-    color: #666;
+    color: #bbb; /* Mengubah deskripsi menjadi abu-abu terang agar tidak silau */
     font-size: 14px;
     margin-bottom: 25px;
     text-align: center;
 }
 
+
+
 .download-card {
-    background: #fafafa;
-    border: 1px solid #e0e0e0;
+    background: #222222; /* Mengubah warna kartu menjadi abu-abu gelap */
+    border: 1px solid #333333; /* Garis tepi yang tipis dan gelap */
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 15px;
@@ -126,18 +132,17 @@ h1 {
 
 .file-name {
     font-weight: 600;
-    color: #2c3e50;
+    color: #ffffff; /* Mengubah nama file menjadi warna putih */
     font-size: 15px;
 }
 
 .file-size {
     font-size: 12px;
-    color: #7f8c8d;
-    margin-top: 2px;
-}
+    color: #aaa; /* Mengubah ukuran file menjadi abu-abu terang */
+    ma
 
 .download-btn {
-    background-color: #2ecc71;
+    background-color: #ff2222; /* Tombol merah */
     color: white;
     text-decoration: none;
     padding: 8px 16px;
@@ -148,5 +153,6 @@ h1 {
 }
 
 .download-btn:hover {
-    background-color: #27ae60;
+    background-color: #cc1111; /* Merah agak gelap saat disentuh kursor */
 }
+
