@@ -8,7 +8,7 @@
 @font-face {
     font-family: 'MinecraftTen';
     src: url('MinecraftTen.otf') format('opentype');
-    font-weight: 700;
+    font-weight: 1000;
     font-style: normal;
 }
 
@@ -16,7 +16,7 @@
 @font-face {
     font-family: 'MinecraftSeven';
     src: url('MinecraftSevenv4.ttf') format('truetype');
-    font-weight: 300;
+    font-weight: 600;
     font-style: normal;
 }
 /* Terapkan font TEBAL ke Judul dan Sub-judul */
