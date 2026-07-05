@@ -19,6 +19,33 @@
     margin: 0 auto 15px auto;  /* Memposisikan otomatis di tengah dan memberi jarak bawah */
     display: block;            /* Memastikan gambar mengambil ruang terpisah */
 }
+/* Untuk browser modern seperti Chrome, Edge, Firefox, dan Safari */
+html {
+    scrollbar-color: #ff2222 #222222; /* Warna batang (merah) & warna latar (hitam/gelap) */
+    scrollbar-width: smooth;           /* Membuat ukuran scrollbar menjadi proporsional */
+}
+
+/* Khusus untuk browser berbasis Webkit (Chrome, Safari, Edge versi lama) agar lebih detail */
+::-webkit-scrollbar {
+    width: 12px; /* Mengatur lebar scrollbar */
+}
+
+/* Mengatur warna latar belakang jalur scrollbar */
+::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+}
+
+/* Mengatur warna batang scrollbar yang digeser */
+::-webkit-scrollbar-thumb {
+    background: #ff2222; 
+    border-radius: 6px;  /* Membuat ujung batang scrollbar melengkung halus */
+    border: 3px solid #1a1a1a; /* Memberi jarak aman antara batang dan jalur luar */
+}
+
+/* Efek saat batang scrollbar diarahkan oleh kursor (hover) */
+::-webkit-scrollbar-thumb:hover {
+    background: #cc1111; /* Warna merah akan sedikit lebih gelap saat disentuh */
+}
 
 #searchInput {
     width: 100%;
