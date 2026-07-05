@@ -6,22 +6,24 @@
 }
 /* Mengatur kotak pembungkus video YouTube */
 .video-container {
-    width: 200%;
-    max-width: 500px;         /* Lebar disamakan dengan kontainer download Anda */
-    aspect-ratio: 16 / 9;     /* Rasio standar video YouTube landscape */
-    margin-bottom: 25px;      /* Jarak aman dengan kotak di bawahnya */
-    border-radius: 12px;      /* Sudut melengkung halus */
-    overflow: hidden;         /* Memotong ujung video agar ikut melengkung */
+    width: 100%;
+    max-width: 500px;         /* Lebar maksimal disamakan dengan container kanan */
+    align-self: stretch;      /* KODE UTAMA: Memaksa tinggi video mengikuti tinggi kotak kanan */
+    border-radius: 12px;      
+    overflow: hidden;         
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #333333;
+    display: flex;
 }
 
-/* Memastikan iframe YouTube mengisi penuh kotak pembungkus */
+/* Memastikan frame video di dalamnya mengisi penuh ruang pembungkus */
 .video-container iframe {
     width: 100%;
     height: 100%;
     border: none;
+    object-fit: cover;        /* Memastikan video memenuhi kotak tanpa memotong bagian penting */
 }
+
 
 
 /* Mengatur kotak hitam panjang untuk media sosial */
@@ -189,20 +191,28 @@ h1 {
     flex: 1; /* Membuat teks mengambil ruang sisa secara fleksibel */
     min-width: 0; /* Mencegah teks meluap keluar */
 }
+/* Mengatur warna nama file menjadi putih bersih */
 .file-name {
-    word-break: break-word; /* Memaksa teks panjang otomatis turun ke bawah jika mentok */
+    font-weight: 600;
+    color: #ffffff !important; 
+    font-size: 14px;
+    word-break: break-word; /* Otomatis membuat baris baru jika teks terlalu panjang */
+    line-height: 1.4;
 }
+
+/* Mengatur warna ukuran file menjadi abu-abu terang */
+.file-size {
+    font-size: 11px;
+    color: #cccccc !important; 
+    margin-top: 4px;
+}
+
 /* Memastikan daftar download card turun ke bawah penuh setelah baris video-container */
 .main-content-row {
     flex-wrap: wrap; /* Mengizinkan konten di bawahnya turun dengan rapi */
 }
 .file-icon {
     font-size: 28px;
-}
-.file-size {
-    font-size: 12px;
-    color: #aaa; /* Mengubah ukuran file menjadi abu-abu terang */
-    margin-top: 2px;
 }
 .download-btn {
     background-color: #ff2222; /* Tombol merah */
