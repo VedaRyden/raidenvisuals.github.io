@@ -6,7 +6,7 @@
 }
 /* Mengatur kotak pembungkus video YouTube */
 .video-container {
-    width: 100%;
+    width: 200%;
     max-width: 500px;         /* Lebar disamakan dengan kontainer download Anda */
     aspect-ratio: 16 / 9;     /* Rasio standar video YouTube landscape */
     margin-bottom: 25px;      /* Jarak aman dengan kotak di bawahnya */
@@ -152,13 +152,16 @@ body {
     }
 }
 .container {
-    background: #181818; /* Mengubah kotak utama menjadi hitam gelap */
+    background: #181818;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6); /* Bayangan lebih gelap dan tegas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid #333333;
     width: 100%;
     max-width: 500px;
+    height: auto; /* Memastikan tinggi kotak otomatis melar ke bawah */
 }
+
 h1 {
     color: #ffffff; /* Mengubah teks judul menjadi putih bersih */
     font-size: 24px;
