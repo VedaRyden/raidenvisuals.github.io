@@ -1,1 +1,3 @@
-test yaudahsih
+test yaudahsih...
+masih pemula sayang bukan orang jago, bikin sekedar keisengan dan kegabutan.
+Web Designer By @VedaRaiden & @Gemini(AI)
