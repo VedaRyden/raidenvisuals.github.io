@@ -6,7 +6,7 @@ downloadButtons.forEach(button => {
         const fileName = this.parentElement.querySelector('.file-name').textContent;
         
         // Menampilkan pesan sukses kecil di browser
-        alert(`Unduhan untuk "${fileName}" telah dimulai!`);
+        alert(`Anda akan memasuki Linkvertise Untuk Mengunduh "${fileName}"  Harap Berhati-hati Dengan Iklannya, Stay Safe!. Jika ingin melewati semua iklan anda dapat donate Rp1000 Perbulan di Trakteer.id`);
     });
 });
 // 1. Load the IFrame Player API code asynchronously
