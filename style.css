@@ -18,15 +18,6 @@
     font-weight: 300;
     font-style: normal;
 }
-/* Mengatur pembungkus blok panduan OS */
-.os-guide-block {
-    display: flex;
-    flex-direction: column; /* Membuat logo berada tepat di ATAS teks */
-    align-items: flex-start;
-    margin-top: 20px;       /* Jarak space antar blok panduan */
-    margin-bottom: 10px;
-}
-
 /* Mengatur ukuran logo Android dan Windows */
 .os-icon {
     width: 35px;            /* Lebar ikon */
@@ -34,15 +25,6 @@
     object-fit: contain;
     margin-bottom: 8px;     /* Jarak antara logo dengan teks di bawahnya */
 }
-
-/* Memastikan teks list di bawah logo tidak tergeser tanda strip (-) bawaan kemarin */
-.os-guide-block li {
-    padding-left: 0;
-}
-.os-guide-block li::before {
-    display: none;          /* Menghilangkan tanda strip khusus untuk baris yang ada logonya */
-}
-
 /* Terapkan font TEBAL ke Judul dan Sub-judul */
 h1, h2, .desc-title-bold {
     font-size: 32px !important;    /* Diperbesar dari 24px */
@@ -54,16 +36,14 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
 }
 /* Mengatur sub-judul di kotak deskripsi bawah */
 .desc-title-bold {
-    font-family: 'RaidenCustomBold', sans-serif !important;
-    font-size: 24px !important;    /* Diperbesar dari 18px */
-    margin-top: 25px;
-    margin-bottom: 12px;
+    font-size: 32px !important;    /* Diperbesar dari 24px */
+    font-family: 'MinecraftTen', sans-serif !important;
+    color: #ff0000; /* Mengubah teks judul menjadi putih bersih */
 }
 /* 2. Mengatur ISI TEKS (Font Tipis) agar LEBIH BESAR dan mudah dibaca */
 .desc-text-light, .desc-list li {
-    font-family: 'RaidenCustomLight', sans-serif !important;
-    font-size: 17px !important;    /* Diperbesar dari 14px */
-    line-height: 1.7;              /* Jarak antar baris kalimat agar tidak menempel rapat */
+    font-family: 'MinecraftSeven', sans-serif !important;
+    color: #ffffff; /* Mengubah teks judul menjadi putih bersih */
 }
 /* Mengatur kotak pembungkus video YouTube */
 .video-container {
@@ -89,7 +69,7 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     margin-bottom: 40px; /* Jarak aman sebelum menyentuh menu sosmed bawah */
 }
 .description-full-container h2 {
-    color: #ff2222;    /* Warna judul deskripsi merah khas Raiden */
+    color: #ff0000;    /* Warna judul deskripsi merah khas Raiden */
     font-size: 20px;
     margin-bottom: 15px;
 }
