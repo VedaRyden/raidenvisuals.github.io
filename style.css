@@ -18,6 +18,13 @@
     font-weight: 300;
     font-style: normal;
 }
+/* 3. Daftarkan Font Body Text yang Baru (Noto Sans) */
+@font-face {
+    font-family: 'NotoSans';
+    src: url('NotoSans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
 /* Mengatur container list launcher agar menumpuk rapi ke bawah */
 .app-launcher-list {
     list-style-type: none !important;
@@ -38,7 +45,7 @@
 
 /* Mengatur teks nama aplikasi launcher */
 .app-launcher-list .app-name {
-    font-family: 'MinecraftSeven', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     font-weight: 700 !important;
     color: #ffffff;
     font-size: 15px;
@@ -84,6 +91,17 @@
     margin-bottom: 12px !important;
 }
 
+/* Memberi jarak dan pemisah visual antar blok panduan (Android/Windows) */
+.os-guide-block {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 0, 0, 0.25);
+}
+
+.os-guide-block:first-of-type {
+    margin-top: 25px;
+}
+
 
 /* Memastikan ukuran logo OS tetap konsisten dan rapi */
 .os-title-wrapper .os-icon {
@@ -97,6 +115,8 @@
 .os-title-wrapper h2 {
     margin: 0 !important;    /* Menghilangkan margin bawaan agar tidak merusak posisi */
     line-height: 1;
+    font-family: 'MinecraftSeven', sans-serif !important; /* Ganti dari MinecraftTen ke MinecraftSeven */
+    font-size: 22px !important; /* Disesuaikan karena MinecraftSeven proporsinya beda dari MinecraftTen */
 }
 
 /* Terapkan font TEBAL ke Judul dan Sub-judul */
@@ -106,7 +126,7 @@ h1, h2, .desc-title-bold {
 }
 /* Terapkan font TIPIS ke isi teks, deskripsi, dan list */
 body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
-    font-family: 'MinecraftSeven', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
 }
 /* Mengatur sub-judul di kotak deskripsi bawah */
 /* Cari kode .desc-title-bold di bagian bawah file style.css Anda */
@@ -124,7 +144,7 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
 
 /* 2. Mengatur ISI TEKS (Font Tipis) agar LEBIH BESAR dan mudah dibaca */
 .desc-text-light, .desc-list li {
-    font-family: 'MinecraftSeven', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     color: #ffffff; /* Mengubah teks judul menjadi putih bersih */
 }
 /* Mengatur kotak pembungkus video YouTube */
@@ -163,6 +183,7 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     color: #ffffff;    /* Warna teks isi deskripsi putih bersih */
     font-size: 14px;
     line-height: 1.6;  /* Mengatur jarak antar baris agar nyaman dibaca */
+    margin-bottom: 10px; /* Jarak antar paragraf agar tidak menempel */
 }
 
 /* Memastikan frame video di dalamnya mengisi penuh ruang pembungkus */
@@ -326,6 +347,11 @@ h1 {
     align-items: center;
     gap: 15px; /* Memberi jarak aman antara teks dan tombol */
     width: 100%;
+    margin-bottom: 18px; /* Jarak antar kartu download agar tidak berdempetan */
+}
+
+.download-card:last-child {
+    margin-bottom: 0; /* Kartu terakhir tidak perlu jarak bawah */
 }
 .file-info {
     display: flex;
@@ -360,13 +386,34 @@ h1 {
     background-color: #ff2222; /* Tombol merah */
     color: white;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 6px;
     font-size: 14px;
     font-weight: 600;
-    transition: background 0.2s;
+    font-family: 'MinecraftTen', sans-serif !important;
+    letter-spacing: 0.5px;
+
+    /* Stroke hitam ala tombol Mojang */
+    border: 2px solid #000000;
+
+    /* Highlight terang di atas, gelap di bawah (efek 3D/bevel) + bayangan luar */
+    box-shadow:
+        inset 0 3px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -4px 0 rgba(0, 0, 0, 0.35),
+        0 3px 0 rgba(0, 0, 0, 0.6);
+
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .download-btn:hover {
-    background-color: #cc1111; /* Merah agak gelap saat disentuh kursor */
+    background-color: #ab2e2e; /* Sedikit lebih terang saat hover, ala Mojang */
+}
+
+.download-btn:active {
+    /* Efek tombol "ditekan" ke dalam */
+    transform: translateY(2px);
+    box-shadow:
+        inset 0 3px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -2px 0 rgba(0, 0, 0, 0.35),
+        0 1px 0 rgba(0, 0, 0, 0.6);
 }
