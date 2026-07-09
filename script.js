@@ -9,7 +9,23 @@ downloadButtons.forEach(button => {
         alert(`Anda akan memasuki Linkvertise Untuk Mengunduh "${fileName}"  Harap Berhati-hati Dengan Iklannya, Stay Safe!. Jika ingin melewati semua iklan anda dapat donate Rp1000 Perbulan di Trakteer.id`);
     });
 });
-// 1. Load the IFrame Player API code asynchronously
+// 3. FITUR SOCIAL MEDIA CONTAINER HILANG SAAT SCROLL, MUNCUL LAGI SAAT BERHENTI
+const socialContainer = document.querySelector('.social-media-container');
+let scrollStopTimer;
+
+window.addEventListener('scroll', function() {
+    // Sembunyikan container begitu user mulai scroll
+    socialContainer.classList.add('is-hidden');
+
+    // Reset timer setiap kali event scroll terpicu
+    clearTimeout(scrollStopTimer);
+
+    // Setelah user berhenti scroll selama 200ms, munculkan lagi container-nya
+    scrollStopTimer = setTimeout(function() {
+        socialContainer.classList.remove('is-hidden');
+    }, 200);
+}, { passive: true });
+
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];

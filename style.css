@@ -209,9 +209,20 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     position: fixed;           /* Mengunci posisi elemen dari gulungan scroll */
     bottom: 20px;              /* Jarak konstan dari batas bawah layar browser */
     left: 50%;                 /* Geser posisi titik awal ke tengah */
-    transform: translateX(-50%); /* Trik CSS agar kotak benar-benar berada pas di tengah layar */
+    transform: translateX(-50%) translateY(0); /* Trik CSS agar kotak benar-benar berada pas di tengah layar */
     width: auto;               /* Lebar kotak otomatis mengikuti jumlah ikon di dalamnya */
     z-index: 9999;             /* Memastikan kotak sosmed selalu berada di lapisan paling depan */
+
+    /* Animasi smooth saat muncul/menghilang ketika scroll */
+    opacity: 1;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* Kelas ini ditambahkan lewat JS saat user sedang scroll */
+.social-media-container.is-hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px); /* Turun sedikit ke bawah sambil memudar */
+    pointer-events: none; /* Mencegah ikon bisa diklik saat sedang tersembunyi */
 }
 /* Mengatur ukuran gambar ikon sosial media */
 .social-link img {
