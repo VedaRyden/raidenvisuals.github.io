@@ -6,7 +6,7 @@ downloadButtons.forEach(button => {
         const fileName = this.parentElement.querySelector('.file-name').textContent;
         
         // Menampilkan pesan sukses kecil di browser
-        alert(`Anda akan memasuki Linkvertise Untuk Mengunduh "${fileName}"  Harap Berhati-hati Dengan Iklannya, Stay Safe!. Jika ingin melewati semua iklan anda dapat donate Rp1000 Perbulan di Trakteer.id`);
+        alert(`Anda akan memasuki Link Vertise untuk mengunduh "${fileName},"  harap berhati-hati dengan iklannya. Jika ingin melewati semua iklan, anda bisa donate Rp1000 per bulan di trakteer.id`);
     });
 });
 // 3. FITUR SOCIAL MEDIA CONTAINER HILANG SAAT SCROLL, MUNCUL LAGI SAAT BERHENTI
@@ -20,10 +20,10 @@ window.addEventListener('scroll', function() {
     // Reset timer setiap kali event scroll terpicu
     clearTimeout(scrollStopTimer);
 
-    // Setelah user berhenti scroll selama 200ms, munculkan lagi container-nya
+    // Setelah user berhenti scroll selama 500ms, munculkan lagi container-nya
     scrollStopTimer = setTimeout(function() {
         socialContainer.classList.remove('is-hidden');
-    }, 200);
+    }, 500);
 }, { passive: true });
 
 var tag = document.createElement('script');
