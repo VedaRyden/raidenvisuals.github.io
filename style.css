@@ -25,6 +25,16 @@
     font-weight: 400;
     font-style: normal;
 }
+
+a {
+  font-family: inherit; 
+  
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-offset: 3px;
+}
+
 /* Mengatur container list launcher agar menumpuk rapi ke bawah */
 .app-launcher-list {
     list-style-type: none !important;
