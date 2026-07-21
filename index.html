@@ -149,6 +149,16 @@
     <p>Untuk Minecraft Bedrock versi stable, buka isi folder "subpacks\OfficialFix" lalu pindahkan folder "renderer" nya ke "C:\XboxGames\Minecraft for Windows\Content\data"</li>
     <p>Untuk Minecraft Bedrock versi preview, tidak perlu memindahkan renderer didalam folder subpacks, langsung pindahkan folder "renderer" nya ke "C:\XboxGames\Minecraft Preview for Windows\Content\data"</li>
 </ul>
+<!-- Tambahkan Blok Cek GPU ini di dalam kelas .container -->
+<div class="gpu-checker-box">
+    <h4 class="gpu-box-title">Cek Kompatibilitas GPU HP-Mu:</h4>
+    <div class="gpu-input-row">
+        <input type="text" id="gpuInput" placeholder="Contoh: Adreno 610 atau Mali-G52...">
+        <button id="gpuCheckBtn">Cek</button>
+    </div>
+    <!-- Tempat memunculkan hasil jawaban kompatibel/tidak -->
+    <div id="gpuResult" class="gpu-result-msg"></div>
+</div>
 
 </div> <!-- AKHIR DARI MAIN CONTENT ROW -->
 <!-- Tambahkan kode sosial media ini di bawah kontainer download Anda -->
@@ -170,6 +180,12 @@
         <img src="img/ti.png" alt="Trakteer">
     </a>
 </div>
+<!-- KODE BARU: Elemen Audio Tersembunyi -->
+<audio id="soundSalah" src="audio/error.ogg" preload="auto"></audio>
+<audio id="soundGagal" src="audio/gagal.ogg" preload="auto"></audio>
+<audio id="soundSukses" src="audio/Challenge_complete.ogg" preload="auto"></audio>
+<audio id="soundWarn" src="audio/Villager_idle1.ogg" preload="auto"></audio>
+
 <script src="script.js"></script>
 </body>
 </html>

@@ -195,7 +195,6 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     line-height: 1.6;  /* Mengatur jarak antar baris agar nyaman dibaca */
     margin-bottom: 10px; /* Jarak antar paragraf agar tidak menempel */
 }
-
 /* Memastikan frame video di dalamnya mengisi penuh ruang pembungkus */
 .video-container iframe {
     width: 100%;
@@ -214,7 +213,6 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     gap: 20px;                 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #ff0000; /* Menambahkan garis tepi tipis agar kotak terlihat tegas */
-
     /* KODE UTAMA UNTUK MENEMPEL DI LAYAR */
     position: fixed;           /* Mengunci posisi elemen dari gulungan scroll */
     bottom: 20px;              /* Jarak konstan dari batas bawah layar browser */
@@ -222,17 +220,14 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     transform: translateX(-50%) translateY(0); /* Trik CSS agar kotak benar-benar berada pas di tengah layar */
     width: auto;               /* Lebar kotak otomatis mengikuti jumlah ikon di dalamnya */
     z-index: 9999;             /* Memastikan kotak sosmed selalu berada di lapisan paling depan */
-
-    /* Animasi smooth saat muncul/menghilang ketika scroll */
-    opacity: 1;
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    transform: translateX(-50%) translateY(0); /* Menyatu rapi posisi tengah dan atas-bawahnya */
 }
-
-/* Kelas ini ditambahkan lewat JS saat user sedang scroll */
-.social-media-container.is-hidden {
-    opacity: 0;
-    transform: translateX(-50%) translateY(20px); /* Turun sedikit ke bawah sambil memudar */
-    pointer-events: none; /* Mencegah ikon bisa diklik saat sedang tersembunyi */
+/* Mengatur animasi menghilang halus saat layar digulir (scroll) */
+.social-fade-out {
+    /* Hapus kode opacity agar tidak memudar */
+    /* Trik menggeser kotak turun ke bawah melewati batas bawah layar laptop/HP */
+    transform: translate(-50%, 100px) !important; 
 }
 /* Mengatur ukuran gambar ikon sosial media */
 .social-link img {
@@ -241,7 +236,6 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     object-fit: contain;
     transition: transform 0.2s ease; /* Menambahkan efek animasi halus saat disentuh */
 }
-
 /* Efek animasi interaktif saat kursor diarahkan ke ikon */
 .social-link img:hover {
     transform: scale(1.5);    /* Ikon akan sedikit membesar/menonjol saat disentuh kursor */
@@ -329,8 +323,6 @@ body {
     max-width: 1400px; /* Diperbesar dari 1100px agar layout bisa melebar maksimal */
     margin-top: 10px;
 }
-
-
 /* Responsif: Jika dibuka di HP yang layarnya sempit, otomatis otomatis menumpuk ke bawah lagi */
 @media (max-width: 900px) {
     .main-content-row {
@@ -370,7 +362,6 @@ h1 {
     width: 100%;
     margin-bottom: 18px; /* Jarak antar kartu download agar tidak berdempetan */
 }
-
 .download-card:last-child {
     margin-bottom: 0; /* Kartu terakhir tidak perlu jarak bawah */
 }
@@ -395,7 +386,6 @@ h1 {
     color: #cccccc !important; 
     margin-top: 4px;
 }
-
 /* Memastikan daftar download card turun ke bawah penuh setelah baris video-container */
 .main-content-row {
     flex-wrap: wrap; /* Mengizinkan konten di bawahnya turun dengan rapi */
@@ -413,23 +403,18 @@ h1 {
     font-weight: 600;
     font-family: 'MinecraftTen', sans-serif !important;
     letter-spacing: 0.5px;
-
     /* Stroke hitam ala tombol Mojang */
     border: 2px solid #000000;
-
     /* Highlight terang di atas, gelap di bawah (efek 3D/bevel) + bayangan luar */
     box-shadow:
         inset 0 3px 0 rgba(255, 255, 255, 0.35),
         inset 0 -4px 0 rgba(0, 0, 0, 0.35),
         0 3px 0 rgba(0, 0, 0, 0.6);
-
     transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
-
 .download-btn:hover {
     background-color: #ab2e2e; /* Sedikit lebih terang saat hover, ala Mojang */
 }
-
 .download-btn:active {
     /* Efek tombol "ditekan" ke dalam */
     transform: translateY(2px);
@@ -437,4 +422,121 @@ h1 {
         inset 0 3px 0 rgba(255, 255, 255, 0.25),
         inset 0 -2px 0 rgba(0, 0, 0, 0.35),
         0 1px 0 rgba(0, 0, 0, 0.6);
+}
+/* Kotak Pembungkus Fitur Cek GPU */
+.gpu-checker-box {
+    background: #222222;
+    border: 1px solid #333333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.gpu-box-title {
+    color: #ffffff;
+    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Mengatur baris input dan tombol agar berjejer ke samping */
+.gpu-input-row {
+    display: flex;
+    gap: 10px;
+}
+
+#gpuInput {
+    flex: 1;
+    padding: 10px;
+    background-color: #181818;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'RaidenCustomLight', sans-serif !important;
+    font-size: 14px;
+    outline: none;
+}
+
+#gpuInput:focus {
+    border-color: #ff2222;
+}
+
+#gpuCheckBtn {
+    background-color: #ff2222;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#gpuCheckBtn:hover {
+    background-color: #cc1111;
+}
+
+/* Gaya Teks Hasil Jawaban */
+.gpu-result-msg {
+    margin-top: 12px;
+    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-size: 14px;
+    font-weight: 700;
+    display: none; /* Sembunyikan dulu di awal sebelum di-klik cek */
+}
+
+/* Warna status */
+/* Warna status jawaban cek GPU */
+.gpu-success { color: #00ff6a; } /* Hijau (Pasti Kompatibel) */
+.gpu-warning { color: #fffb00; } /* Oranye/Kuning (Kemungkinan Kompatibel) */
+.gpu-fail    { color: #ff0000; } /* Merah (Tidak Kompatibel / Tidak Ditemukan) */
+/* Animasi Gerakan Gempa (Menggeser posisi kiri-kanan dengan cepat) */
+@keyframes gempaAnimasi {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+    100% { transform: translateX(0); }
+}
+
+/* Class pemicu yang akan dimasukkan lewat JavaScript */
+.efek-gempa {
+    animation: gempaAnimasi 0.3s ease-in-out;
+    border-color: #e74c3c !important; /* Mengubah garis tepi kotak input jadi merah menyala saat gempa */
+}
+/* Efek garis tepi hijau menyala saat GPU kompatibel */
+.outline-hijau {
+    border-color: #00ff6a !important;
+    box-shadow: 0 0 8px rgba(46, 204, 113, 0.4); /* Efek aura cahaya hijau tipis */
+    transition: all 0.3s ease;
+}
+.outline-kuning {
+    border-color: #fffb00 !important;
+    box-shadow: 0 0 8px rgba(255, 251, 0, 0.4); /* Efek aura cahaya kuning tipis */
+    transition: all 0.3s ease;
+}
+.outline-merah {
+    border-color: #ff0000 !important;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4); /* Efek aura cahaya merah tipis */
+    transition: all 0.3s ease;
+}
+/* Animasi Cahaya Hijau Menyala lalu Memudar Hilang (Fade Out) */
+@keyframes cahayaHijauFadeOut {
+    0% {
+        box-shadow: 0 0 40px rgb(0, 255, 106), 0 0 50px rgba(46, 204, 113, 0.6);
+        border-color: #2ecc71 !important;
+    }
+    100% {
+        box-shadow: 0 0 5px rgb(0, 255, 106), 0 0 15px  rgba(46, 204, 113, 0.6);
+        border-color: #444444; /* Kembali ke warna asli garis tepi kotak input Anda */
+    }
+}
+
+/* Class pemicu animasi */
+.efek-cahaya-hijau {
+    /* Animasi berjalan selama 2 detik, hanya 1 kali, dan mempertahankan hasil akhir (forwards) */
+    animation: cahayaHijauFadeOut 4.0s forwards ease-out; 
 }
