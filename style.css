@@ -444,10 +444,12 @@ h1 {
 .gpu-input-row {
     display: flex;
     gap: 10px;
+    width: 100%;
 }
 
 #gpuInput {
     flex: 1;
+    min-width: 0; /* KUNCI PERBAIKAN: agar input bisa menyusut dan tidak mendorong tombol keluar kotak di layar sempit */
     padding: 10px;
     background-color: #181818;
     border: 1px solid #444444;
@@ -471,11 +473,24 @@ h1 {
     font-family: 'RaidenCustomBold', sans-serif !important;
     font-weight: 700;
     cursor: pointer;
+    flex-shrink: 0; /* Mencegah tombol ikut menyusut/gepeng, biarkan input yang menyesuaikan */
     transition: background 0.2s;
 }
 
 #gpuCheckBtn:hover {
     background-color: #cc1111;
+}
+
+/* Di layar sangat sempit (HP kecil seperti iPhone SE), tumpuk input dan tombol ke bawah agar lebih lega */
+@media (max-width: 360px) {
+    .gpu-input-row {
+        flex-direction: column;
+    }
+
+    #gpuCheckBtn {
+        padding: 10px 20px; /* Diberi tinggi yang sama seperti input saat berdiri sendiri di bawah */
+        width: 100%;
+    }
 }
 
 /* Gaya Teks Hasil Jawaban */
