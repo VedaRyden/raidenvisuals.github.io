@@ -173,7 +173,8 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #ff0000;
     max-width: 1340px; 
-    
+        width: 100%;
+
     /* UBAH BAGIAN INI: Kurangi nilainya agar kotaknya bergeser ke atas */
     margin-top: 0px;      /* DIUBAH: Dikurangi dari 30px menjadi 10px */
     margin-bottom: 40px; 
@@ -195,6 +196,7 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     width: 100%;
     height: 100%;
     border: none;
+    object-fit: cover; /* KODE UTAMA: Memaksa video memotong sedikit bagian samping agar penuh tanpa garis hitam */
 }
 /* Mengatur kotak hitam sosmed agar selalu menempel mati di bawah layar */
 .social-media-container {
@@ -293,18 +295,25 @@ html {
     background: #cc1111; /* Warna merah akan sedikit lebih gelap saat disentuh */
 }
 body {
-    /* Mengatur gambar sebagai background penuh */
-    overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan-kiri */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    overflow-x: hidden; 
+    display: grid;                     /* UBAH: Dari flex menjadi grid */
+    grid-template-rows: auto 1fr auto; /* TRICK UTAMA: Memaksa konten tengah melar dan mendorong footer ke paling bawah */
+    align-items: start;
+    justify-items: center;             /* Memastikan semua konten tetap di tengah halaman */
+    min-height: 100vh;                 /* Memaksa tinggi halaman minimal setinggi layar monitor */
+    width: 100%;
+    margin: 0;
+    padding: 20px 15px 0px 15px;       /* Setel padding bawah ke 0px agar footer nempel mentok */
+    box-sizing: border-box;
+    
+    /* Kode background-image Anda tetap biarkan sama di bawah ini */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/background.jpg');
-    background-size: cover;          /* Memastikan gambar menutup seluruh layar */
-    background-position: center;     /* Posisi gambar selalu di tengah */
-    background-attachment: fixed;    /* Gambar tetap diam saat halaman di-scroll */
-    background-repeat: no-repeat;    /* Mencegah gambar berulang/pecah */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
+
 /* Mengatur tata letak video (kiri) dan download card (kanan) */
 .main-content-row {
     display: flex;
@@ -546,35 +555,32 @@ h1 {
     object-fit: contain;   /* Mencegah gambar menjadi gepeng */
     border-radius: 8px;    /* Efek melengkung halus di ujung stiker (opsional) */
 }
-/* Mengatur Kontainer Utama Footer */
-/* Mengatur Kontainer Utama Footer agar FULL 100% Mengisi Batas Layar */
+/* Mengatur Kontainer Utama Footer agar Panjang Mentok Kanan-Kiri yang Presisi */
 .site-footer {
-    background-color: #121212 !important; /* Warna hitam legam penuh */
+    background-color: #121212 !important;
     border-top: 1px solid #222222;
-        /* KODE UTAMA UNTUK MENTOK KANAN KIRI */
-    width: 100vw !important;              
-    position: relative;
-    left: 50%;
-    right: 50%;
-    transform: translateX(-50%);         /* Trik CSS agar box 100vw berdiri pas di tengah layar */
-    padding: 40px 40px 60px 40px;         /* Ditambah padding bawah agar menutupi sisa layar */
-    margin-top: 50px; 
-    margin-bottom: 0 !important;          /* Menghilangkan jarak aman bawah agar nempel ke ujung */
-    font-family: 'NotoSans', sans-serif !important;
+    /* RUMUS BARU: Lebar 100vw penuh, ditarik ke kiri-kanan sebesar 15px (mengompensasi padding body) */
+    width: 100vw !important;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    /* Ruang bagian dalam kotak footer */
+    padding: 40px 60px 80px 60px;         
+    margin-top: 60px; 
+    margin-bottom: 0 !important;          
+    font-family: 'RaidenCustomLight', sans-serif !important;
     box-sizing: border-box;
 }
-
-/* Memperluas area isi kontainer dalam agar sejajar rapi */
+/* Mengunci teks di dalam agar tetap rapi di tengah monitor besar */
 .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    max-width: 1340px; /* Tetap sejajar dengan kontainer atas Anda */
     margin: 0 auto;
     gap: 30px;
+    width: 100%;
     flex-wrap: wrap;
 }
-
-
 /* Sisi Kiri: Logo & Deskripsi */
 .footer-left {
     display: flex;
@@ -582,26 +588,22 @@ h1 {
     gap: 15px;
     max-width: 700px; /* Membatasi agar teks deskripsi tidak terlalu molor ke kanan */
 }
-
 .footer-brand {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-
 .footer-logo {
     width: 55px !important;
     height: 55px !important;
     object-fit: contain;
 }
-
 .footer-brand-text h3 {
     font-family: 'RaidenCustomBold', sans-serif !important;
     color: #ff2222; /* Merah khas Raiden */
     font-size: 18px;
     margin-bottom: 4px;
 }
-
 .footer-desc {
     color: #aaaaaa;
     font-size: 13px;
