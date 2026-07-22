@@ -35,7 +35,10 @@
         </iframe>
     </div>
    <!-- 2. SISI KANAN: Kotak Kontainer Utama -->
-    <div class="container">
+    
+    <!-- Tambahkan id="download-section" seperti di bawah ini -->
+<div class="container" id="download-section">
+
         <div class="main-icon-wrapper">
             <img src="img/pack_icon.png" alt="Logo" class="main-page-icon">
         </div>
@@ -69,7 +72,7 @@
     <!-- KODE BARU 1: Kotak Deskripsi Panjang di Bagian Bawah -->
 <div class="description-full-container">
     <h2>Apa itu Raiden Visuals?</h2>
-    <p>Raiden Visuals 2.0 Adalah Custom Deferred Configuration Yang Dapat Mengoptimalkan Performa Vibrant Visuals Pada Minecraft Bedrock.</p>
+    <p>Raiden Visuals Adalah Custom Deferred Configuration Yang Dapat Mengoptimalkan Performa Vibrant Visuals Pada Minecraft Bedrock.</p>
     <h2>Keunggulan</h2>
     <p>Mengoptimalkan Bayangan Pada Vibrant Visuals.</p>
     <p>Mengoptimalkan Refleksi Ruang Layar Pada Vibrant Visuals.</p>
@@ -78,7 +81,6 @@
     <p>Memperluas Opsi Jarak Render (Menjadi 1-50 Chunks).</p>
     <p> </p>
 <p class="desc-list">
-    <!-- BLOK PANDUAN ANDROID -->
     <!-- BLOK PANDUAN ANDROID -->
 <!-- BLOK PANDUAN ANDROID -->
 <div class="os-guide-block">
@@ -95,7 +97,7 @@
     <li style="display: block; margin-bottom: 24px;">
         <div style="display: flex; align-items: center; gap: 10px;">
             <span class="app-name">MB Loader :</span>
-            <a href="https://play.google.com/store/apps/details?id=io.github.bambosan.mbloader&pcampaignid=web_share" target="_blank">
+            <a href="https://play.google.com/store/apps/details?id=io.github.bambosan.mbloader&pcampaignid=web_share" target="_blank" class="launcher-btn">
                 <img src="img/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="badge-img">
             </a>
         </div>
@@ -106,7 +108,7 @@
         <!-- Baris Levi Launcher -->
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
             <span class="app-name">Levi Launcher :</span>
-            <a href="https://github.com/LiteLDev/LeviLaunchroid/releases" target="_blank">
+            <a href="https://github.com/LiteLDev/LeviLaunchroid/releases" target="_blank" class="launcher-btn">
                 <img src="img/get-it-on-github.png" alt="Get it on GitHub" class="badge-img github-badge">
             </a>
         </div>
@@ -117,7 +119,7 @@
     <li style="display: block; margin-bottom: 24px;">
         <div style="display: flex; align-items: center; gap: 10px;">
             <span class="app-name">Ambient For MCPE :</span>
-            <a href="https://play.google.com/store/apps/details?id=io.kitsuri.mayape" target="_blank">
+            <a href="https://play.google.com/store/apps/details?id=io.kitsuri.mayape" target="_blank" class="launcher-btn">
                 <img src="img/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="badge-img">
             </a>
         </div>
@@ -128,7 +130,7 @@
     <li style="display: block; margin-bottom: 0;">
         <div style="display: flex; align-items: center; gap: 10px;">
             <span class="app-name">Flarial Client :</span>
-            <a href="https://play.google.com/store/apps/details?id=com.flarialmc.flarial_launcher" target="_blank">
+            <a href="https://play.google.com/store/apps/details?id=com.flarialmc.flarial_launcher" target="_blank" class="launcher-btn">
                 <img src="img/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="badge-img">
             </a>
         </div>
@@ -149,7 +151,9 @@
     <p>Untuk Minecraft Bedrock versi stable, buka isi folder "subpacks\OfficialFix" lalu pindahkan folder "renderer" nya ke "C:\XboxGames\Minecraft for Windows\Content\data"</li>
     <p>Untuk Minecraft Bedrock versi preview, tidak perlu memindahkan renderer didalam folder subpacks, langsung pindahkan folder "renderer" nya ke "C:\XboxGames\Minecraft Preview for Windows\Content\data"</li>
 </ul>
+<div class="os-guide-block"></div>
 <!-- Tambahkan Blok Cek GPU ini di dalam kelas .container -->
+<h2>Pengecekan GPU untuk android</h2>
 <div class="gpu-checker-box">
     <h4 class="gpu-box-title">Cek Kompatibilitas GPU HP-Mu:</h4>
     <div class="gpu-input-row">
@@ -159,7 +163,23 @@
     <!-- Tempat memunculkan hasil jawaban kompatibel/tidak -->
     <div id="gpuResult" class="gpu-result-msg"></div>
 </div>
+<p>Tier 1 Tidak kompatibel, Tier 2 Tidak kompatibel, Tier 3 Belum kompatibel ntuk saat ini, Tier 4 Sudah kompatibel, Tier 5 Pasti kompatibel.</p>
+<p>Jika GPU Anda masuk di Tier 3 tapi Vibrant Visuals tidak dapat digunakan maka sebentar lagi akan kompatibel di update minecraft selanjutnya.</p>
+<p>Jika GPU Anda tidak terdaftar, maka kemungkinan besar tidak akan pernah kompatibel, solusi beli hp baru.</p>
+<p>Tier 5 Adalah spek GPU tertinggi, sedangkan Tier 1 adalah spek GPU terendah.</p>
+<p>Tier 1 Sama Tier 2 lebih kasihan sih akan sangat lama untuk dapat menggunakan vibrant visuals mungkin tahun depan?, itupun dengan hasil visual dan performa yang lebih rendah.</p>
 
+<div class="os-guide-block"></div>
+<h2>website masih dalam pengembangan terus pantau...</h2>
+<p>📝 To Do List</p>
+<p>Perbandingan Performa Vibrant Visuals Bawaan Vs Raiden Visuals</p>
+<p>Perbandingan Bayangan, Block Light, Refleksi, & Kabut volumetrik dari Vibrant Visuals bawaan vs Raiden Visuals</p>
+<p>Tutorial Pemasangan untuk Android pada masing-masing Launcher mengunakan Screenhots Step By Step</p>
+<p>Rekomendasi GPU untuk menggunakan Vibrant Visuals</p>
+<p>Rekomendasi setingan opsi grafis Vibrant Visuals untuk performa dan kualitas</p>
+<p>Rekomendasi Vibrant Visuals Pack Agar lebih indah dan Immersive</p>
+<p>Join DIscord Untuk Info Update Terbaru Dan Berkomunikasi Mengenai Vibrant Visuals</p>
+<p>Rayuan Donasi Melalui Trakteer.Id dan menunjukan kelebihanya untuk download Raiden Visuals langsung ke mediafire tanpa melewati banyak iklan</p>
 </div> <!-- AKHIR DARI MAIN CONTENT ROW -->
 <!-- Tambahkan kode sosial media ini di bawah kontainer download Anda -->
 <div class="social-media-container">
@@ -181,11 +201,47 @@
     </a>
 </div>
 <!-- KODE BARU: Elemen Audio Tersembunyi -->
+<audio id="soundClick" src="audio/Click_stereo.ogg.mp3" preload="auto"></audio>
 <audio id="soundSalah" src="audio/error.ogg" preload="auto"></audio>
 <audio id="soundGagal" src="audio/gagal.ogg" preload="auto"></audio>
 <audio id="soundSukses" src="audio/Challenge_complete.ogg" preload="auto"></audio>
 <audio id="soundWarn" src="audio/Villager_idle1.ogg" preload="auto"></audio>
-
+<audio id="soundRelease" src="audio/Release.ogg.mp3" preload="auto"></audio>
 <script src="script.js"></script>
+<!-- KODE BARU: Blok Footer Paling Bawah Halaman -->
+<footer class="site-footer">
+    <div class="footer-container">
+        
+        <!-- SISI KIRI: Branding & Informasi Logo -->
+        <div class="footer-left">
+            <div class="footer-brand">
+                <img src="img/pack_icon.png" alt="Raiden Visuals Logo" class="footer-logo">
+                <div class="footer-brand-text">
+                    <h3>Raiden Visuals</h3>
+                    <p class="footer-desc">Custom Deferred Configuration terbaik untuk mengoptimalkan performa Vibrant Visuals di Minecraft Bedrock.</p>
+                </div>
+            </div>
+            <!-- Teks Disclaimer Hukum Minecraft -->
+            <div class="footer-disclaimer">
+                <p>Not affiliated with Mojang or Microsoft. "Minecraft" is a trademark of Mojang Studios.</p>
+            </div>
+        </div>
+
+        <!-- SISI KANAN: Tombol Pintasan Kembali ke Atas / Tempat Download -->
+        <div class="footer-right">
+            <!-- Ganti #download-section dengan id container download Anda jika ada -->
+            <!-- Pastikan href tertulis #download-section -->
+            <!-- Cari kode ini di bagian footer dan tambahkan class launcher-btn -->
+            <a href="#download-section" class="scroll-to-download-btn launcher-btn">Kembali ke Unduhan</a>
+        </div>
+    </div>
+
+    <!-- BAGIAN TENGAH PALING UJUNG BAWAH: Teks Copyright -->
+    <div class="footer-bottom-copyright">
+        <p>&copy; 2026 Raiden Visuals. All Rights Reserved.</p>
+    </div>
+</footer>
+
 </body>
+
 </html>

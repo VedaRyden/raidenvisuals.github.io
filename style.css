@@ -25,14 +25,16 @@
     font-weight: 400;
     font-style: normal;
 }
-
 a {
   font-family: inherit; 
-  
   color: white;
   text-decoration: underline;
   text-decoration-color: white;
   text-underline-offset: 3px;
+}
+/* Tambahkan kode ini di bagian paling atas file style.css Anda */
+html {
+    scroll-behavior: smooth; /* KODE UTAMA: Membuat semua efek lompatan link menjadi animasi gulir halus */
 }
 
 /* Mengatur container list launcher agar menumpuk rapi ke bawah */
@@ -45,14 +47,12 @@ a {
     gap: 12px; /* Jarak vertikal antar baris aplikasi */
     width: 100%;
 }
-
 /* Mengatur baris item agar teks dan tombol sejajar horizontal */
 .app-launcher-list li {
     display: flex;
     align-items: center;
     gap: 10px; /* Jarak horizontal antara teks titik dua (:) dan tombol */
 }
-
 /* Mengatur teks nama aplikasi launcher */
 .app-launcher-list .app-name {
     font-family: 'NotoSans', sans-serif !important;
@@ -62,7 +62,6 @@ a {
     min-width: 130px; /* Mengunci lebar teks agar posisi semua tombol di kanannya sejajar lurus vertikal */
     display: inline-block;
 }
-
 /* Mengatur ukuran proporsional tombol Google Play dan GitHub badge */
 .app-launcher-list .badge-img {
     height: 35px; /* Mengunci tinggi tombol agar serasi dengan ukuran teks */
@@ -77,13 +76,10 @@ a {
     margin-top: -1px;           /* Penyesuaian posisi atas bawah */
     margin-left: -2px;          /* Penyesuaian posisi kiri kanan */
 }
-
-
 /* Animasi membesar halus saat tombol disorot kursor */
 .app-launcher-list .badge-img:hover {
     transform: scale(1.05);
 }
-
 /* Mengatur ukuran logo Android dan Windows */
 .os-icon {
     width: 35px;            /* Lebar ikon */
@@ -176,7 +172,6 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #ff0000;
-    width: 100%;
     max-width: 1340px; 
     
     /* UBAH BAGIAN INI: Kurangi nilainya agar kotaknya bergeser ke atas */
@@ -200,7 +195,6 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     width: 100%;
     height: 100%;
     border: none;
-    object-fit: cover; /* KODE UTAMA: Memaksa video memotong sedikit bagian samping agar penuh tanpa garis hitam */
 }
 /* Mengatur kotak hitam sosmed agar selalu menempel mati di bawah layar */
 .social-media-container {
@@ -300,12 +294,11 @@ html {
 }
 body {
     /* Mengatur gambar sebagai background penuh */
+    overflow-x: hidden; /* Mencegah halaman bisa digeser ke kanan-kiri */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 100vh;
-    padding: 40px 20px 120px 20px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/background.jpg');
     background-size: cover;          /* Memastikan gambar menutup seluruh layar */
     background-position: center;     /* Posisi gambar selalu di tengah */
@@ -333,7 +326,7 @@ body {
 }
 .container {
     background: #181818;
-    padding: 31px; /* Ditambah sedikit agar ruang dalam kotak hitam lebih lega */
+    padding: 32px; /* Ditambah sedikit agar ruang dalam kotak hitam lebih lega */
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #ff0000;
@@ -426,7 +419,7 @@ h1 {
 /* Kotak Pembungkus Fitur Cek GPU */
 .gpu-checker-box {
     background: #222222;
-    border: 1px solid #333333;
+    border: 1px solid #ff0000;
     padding: 15px;
     border-radius: 8px;
     margin-top: 20px;
@@ -435,17 +428,15 @@ h1 {
 
 .gpu-box-title {
     color: #ffffff;
-    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     font-size: 14px;
     margin-bottom: 10px;
 }
-
 /* Mengatur baris input dan tombol agar berjejer ke samping */
 .gpu-input-row {
     display: flex;
     gap: 10px;
 }
-
 #gpuInput {
     flex: 1;
     padding: 10px;
@@ -453,44 +444,38 @@ h1 {
     border: 1px solid #444444;
     border-radius: 6px;
     color: #ffffff;
-    font-family: 'RaidenCustomLight', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     font-size: 14px;
     outline: none;
 }
-
 #gpuInput:focus {
     border-color: #ff2222;
 }
-
 #gpuCheckBtn {
     background-color: #ff2222;
     color: white;
     border: none;
     padding: 0 20px;
     border-radius: 6px;
-    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     font-weight: 700;
     cursor: pointer;
     transition: background 0.2s;
 }
-
 #gpuCheckBtn:hover {
     background-color: #cc1111;
 }
-
 /* Gaya Teks Hasil Jawaban */
 .gpu-result-msg {
     margin-top: 12px;
-    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     font-size: 14px;
     font-weight: 700;
     display: none; /* Sembunyikan dulu di awal sebelum di-klik cek */
 }
-
-/* Warna status */
 /* Warna status jawaban cek GPU */
-.gpu-success { color: #00ff6a; } /* Hijau (Pasti Kompatibel) */
-.gpu-warning { color: #fffb00; } /* Oranye/Kuning (Kemungkinan Kompatibel) */
+.gpu-success { color: #00ff00; } /* Hijau (Pasti Kompatibel) */
+.gpu-warning { color: #ffff00; } /* Oranye/Kuning (Kemungkinan Kompatibel) */
 .gpu-fail    { color: #ff0000; } /* Merah (Tidak Kompatibel / Tidak Ditemukan) */
 /* Animasi Gerakan Gempa (Menggeser posisi kiri-kanan dengan cepat) */
 @keyframes gempaAnimasi {
@@ -501,20 +486,19 @@ h1 {
     80% { transform: translateX(6px); }
     100% { transform: translateX(0); }
 }
-
 /* Class pemicu yang akan dimasukkan lewat JavaScript */
 .efek-gempa {
     animation: gempaAnimasi 0.3s ease-in-out;
-    border-color: #e74c3c !important; /* Mengubah garis tepi kotak input jadi merah menyala saat gempa */
+    border-color: #ff0000 !important; /* Mengubah garis tepi kotak input jadi merah menyala saat gempa */
 }
 /* Efek garis tepi hijau menyala saat GPU kompatibel */
 .outline-hijau {
-    border-color: #00ff6a !important;
-    box-shadow: 0 0 8px rgba(46, 204, 113, 0.4); /* Efek aura cahaya hijau tipis */
+    border-color: #00ff00 !important;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.4); /* Efek aura cahaya hijau tipis */
     transition: all 0.3s ease;
 }
 .outline-kuning {
-    border-color: #fffb00 !important;
+    border-color: #ffff00 !important;
     box-shadow: 0 0 8px rgba(255, 251, 0, 0.4); /* Efek aura cahaya kuning tipis */
     transition: all 0.3s ease;
 }
@@ -526,17 +510,152 @@ h1 {
 /* Animasi Cahaya Hijau Menyala lalu Memudar Hilang (Fade Out) */
 @keyframes cahayaHijauFadeOut {
     0% {
-        box-shadow: 0 0 40px rgb(0, 255, 106), 0 0 50px rgba(46, 204, 113, 0.6);
-        border-color: #2ecc71 !important;
+        box-shadow: 0 0 40px rgb(0, 255, 0), 0 0 50px rgba(46, 204, 0, 0.6);
+        border-color: #00ff00 !important;
     }
     100% {
-        box-shadow: 0 0 5px rgb(0, 255, 106), 0 0 15px  rgba(46, 204, 113, 0.6);
+        box-shadow: 0 0 5px rgb(0, 255, 0), 0 0 15px  rgba(46, 204, 0, 0.6);
         border-color: #444444; /* Kembali ke warna asli garis tepi kotak input Anda */
     }
 }
-
 /* Class pemicu animasi */
 .efek-cahaya-hijau {
     /* Animasi berjalan selama 2 detik, hanya 1 kali, dan mempertahankan hasil akhir (forwards) */
-    animation: cahayaHijauFadeOut 4.0s forwards ease-out; 
+    animation: cahayaHijauFadeOut 3.0s forwards ease-out; 
 }
+/* Mengatur ukuran dan posisi stiker di dalam teks hasil pencarian */
+/* Mengatur stiker hasil agar berada di tengah bawah teks */
+.result-sticker {
+    display: block;        /* Memaksa gambar membuat baris baru sendiri */
+    margin: 20px auto 0 auto; /* Margin atas 20px agar tidak menempel teks, auto kanan-kiri agar ke tengah */
+    height: 150px;         /* Atur tinggi stiker seimbang */
+    object-fit: contain;   /* Mencegah gambar menjadi gepeng */
+    border-radius: 8px;    /* Efek melengkung halus di ujung stiker (opsional) */
+}
+/* Mengatur Kontainer Utama Footer */
+/* Mengatur Kontainer Utama Footer agar FULL 100% Mengisi Batas Layar */
+.site-footer {
+    background-color: #121212 !important; /* Warna hitam legam penuh */
+    border-top: 1px solid #222222;
+        /* KODE UTAMA UNTUK MENTOK KANAN KIRI */
+    width: 100vw !important;              
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);         /* Trik CSS agar box 100vw berdiri pas di tengah layar */
+    padding: 40px 40px 60px 40px;         /* Ditambah padding bawah agar menutupi sisa layar */
+    margin-top: 50px; 
+    margin-bottom: 0 !important;          /* Menghilangkan jarak aman bawah agar nempel ke ujung */
+    font-family: 'NotoSans', sans-serif !important;
+    box-sizing: border-box;
+}
+
+/* Memperluas area isi kontainer dalam agar sejajar rapi */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* Sisi Kiri: Logo & Deskripsi */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 700px; /* Membatasi agar teks deskripsi tidak terlalu molor ke kanan */
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    width: 55px !important;
+    height: 55px !important;
+    object-fit: contain;
+}
+
+.footer-brand-text h3 {
+    font-family: 'RaidenCustomBold', sans-serif !important;
+    color: #ff2222; /* Merah khas Raiden */
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.footer-desc {
+    color: #aaaaaa;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Teks Disclaimer Mojang */
+.footer-disclaimer p {
+    color: #666666 !important; /* Warna abu-abu redup khas teks legalitas hukum */
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Sisi Kanan: Tombol Lompat ke Tempat Download */
+.footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.scroll-to-download-btn {
+    background-color: #ff2222;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 34, 34, 0.2);
+}
+
+.scroll-to-download-btn:hover {
+    background-color: #cc1111;
+    transform: translateY(-2px); /* Efek sedikit mengangkat saat kursor masuk */
+}
+
+/* Bagian Tengah Paling Ujung Bawah: Copyright */
+.footer-bottom-copyright {
+    border-top: 1px solid #222222;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center; /* Memaksa posisi teks berada tepat di tengah */
+}
+
+.footer-bottom-copyright p {
+    color: #555555;
+    font-size: 12px;
+}
+
+/* Responsif HP: Membuat tampilan sejajar ke bawah jika dibuka dari mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-brand {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left {
+        align-items: center;
+    }
+    .footer-right {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+
