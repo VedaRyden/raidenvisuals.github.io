@@ -36,32 +36,41 @@ a {
 html {
     scroll-behavior: smooth; /* KODE UTAMA: Membuat semua efek lompatan link menjadi animasi gulir halus */
 }
-
-/* Mengatur container list launcher agar menumpuk rapi ke bawah */
-.app-launcher-list {
-    list-style-type: none !important;
-    padding-left: 0 !important;
-    margin-top: 15px;
+/* Pembungkus nama aplikasi dan sub-teks penjelasan */
+.app-info-wrapper {
     display: flex;
-    flex-direction: column;
-    gap: 12px; /* Jarak vertikal antar baris aplikasi */
-    width: 100%;
+    flex-direction: column; /* Menyusun teks penjelasan tepat di bawah nama aplikasi */
+    gap: 4px;
+    min-width: 250px;       /* Memberi ruang lebar agar teks tidak terlalu menumpuk */
 }
-/* Mengatur baris item agar teks dan tombol sejajar horizontal */
+
+/* Mengatur gaya tulisan penjelasan di bawah launcher */
+.app-subtext {
+    font-family: 'NotoSans', sans-serif !important;
+    font-weight: 300 !important;
+    color: #ffffff !important; /* Warna abu-abu terang agar terpisah secara visual dari judul */
+    font-size: 13px !important;
+    margin: 0 !important;
+    line-height: 1.4;
+    max-width: 30400px;         /* Membatasi lebar teks agar tidak menabrak tombol */
+}
+
+/* Memastikan baris item list tetap sejajar secara vertikal dengan tombol */
 .app-launcher-list li {
     display: flex;
+    color: #ffffff !important; /* Warna abu-abu terang agar terpisah secara visual dari judul */
     align-items: center;
-    gap: 10px; /* Jarak horizontal antara teks titik dua (:) dan tombol */
+    justify-content: space-between; /* Memisahkan teks di kiri dan tombol badge di kanan */
+    max-width: 600px;               /* Batas lebar total baris list */
+    gap: 20px;
+    margin-bottom: 15px;            /* Jarak konsisten antar baris aplikasi */
 }
-/* Mengatur teks nama aplikasi launcher */
+
+/* Setel ulang min-width app-name lama agar flexbox bekerja dengan fleksibel */
 .app-launcher-list .app-name {
-    font-family: 'NotoSans', sans-serif !important;
-    font-weight: 700 !important;
-    color: #ffffff;
-    font-size: 15px;
-    min-width: 130px; /* Mengunci lebar teks agar posisi semua tombol di kanannya sejajar lurus vertikal */
-    display: inline-block;
+    min-width: auto !important;
 }
+
 /* Mengatur ukuran proporsional tombol Google Play dan GitHub badge */
 .app-launcher-list .badge-img {
     height: 35px; /* Mengunci tinggi tombol agar serasi dengan ukuran teks */
@@ -70,11 +79,25 @@ html {
     display: block;
     transition: transform 0.2s ease;
 }
+/* Mengatur dekorasi tautan nama aplikasi agar terlihat rapi */
+.app-name-link {
+    text-decoration: underline; /* Memberi efek garis bawah saat diarahkan kursor */
+    color: #ff0000; /* Memberi efek warna merah saat diarahkan kursor */
+}
+.app-name-link:hover {
+    text-decoration: none;
+}
+/* Menyamakan ukuran semua badge/tombol download */
+.launcher-btn img {
+    height: 40px;      /* Atur tinggi yang seragam untuk semua ikon */
+    width: auto;       /* Biarkan lebar menyesuaikan secara proporsional */
+    display: block;
+    object-fit: contain; /* Memastikan gambar tidak terdistorsi atau terpotong */
+}
 /* Mengunci ukuran badge GitHub secara langsung agar pas dan seimbang */
 .github-badge {
-    height: 48px !important;    /* Menaikkan tinggi gambar inti agar pas dengan Google Play */
-    margin-top: -1px;           /* Penyesuaian posisi atas bawah */
-    margin-left: -2px;          /* Penyesuaian posisi kiri kanan */
+    height: 52px !important;    /* Menaikkan tinggi gambar inti agar pas dengan Google Play */
+    margin-left: -5px; 
 }
 /* Animasi membesar halus saat tombol disorot kursor */
 .app-launcher-list .badge-img:hover {
@@ -96,7 +119,6 @@ html {
     margin-top: 10px !important;    /* DIUBAH: Dikurangi dari 25px menjadi 10px agar lebih menempel ke atas */
     margin-bottom: 12px !important;
 }
-
 /* Memberi jarak dan pemisah visual antar blok panduan (Android/Windows) */
 .os-guide-block {
     margin-top: 30px;
@@ -114,13 +136,11 @@ html {
     width: 32px !important;
     height: 32px !important;
     object-fit: contain;
-    margin-bottom: 0 !important; /* Menghilangkan margin bawah lama agar lurus dengan teks */
 }
 
 /* Merapikan teks judul OS agar jaraknya pas */
 .os-title-wrapper h2 {
     margin: 0 !important;    /* Menghilangkan margin bawaan agar tidak merusak posisi */
-    line-height: 1;
     font-family: 'MinecraftSeven', sans-serif !important; /* Ganti dari MinecraftTen ke MinecraftSeven */
     font-size: 22px !important; /* Disesuaikan karena MinecraftSeven proporsinya beda dari MinecraftTen */
 }
@@ -132,6 +152,7 @@ h1, h2, .desc-title-bold {
 }
 /* Terapkan font TIPIS ke isi teks, deskripsi, dan list */
 body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
+    
     font-family: 'NotoSans', sans-serif !important;
 }
 /* Mengatur sub-judul di kotak deskripsi bawah */
@@ -141,13 +162,10 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     font-weight: 700 !important;
     color: #ff0000;
     font-size: 32px !important;
-    
     /* UBAH BAGIAN INI: Tambahkan jarak atas agar tidak menempel */
-    margin-top: 30px !important;    /* Diubah dari 25px menjadi 45px agar teks turun */
     margin-bottom: 15px !important; /* Jarak bawah ke arah teks Android */
     letter-spacing: 0.5px;
 }
-
 /* 2. Mengatur ISI TEKS (Font Tipis) agar LEBIH BESAR dan mudah dibaca */
 .desc-text-light, .desc-list li {
     font-family: 'NotoSans', sans-serif !important;
@@ -173,11 +191,8 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     border: 1px solid #ff0000;
     max-width: 1340px; 
-        width: 100%;
-
-    /* UBAH BAGIAN INI: Kurangi nilainya agar kotaknya bergeser ke atas */
-    margin-top: 0px;      /* DIUBAH: Dikurangi dari 30px menjadi 10px */
-    margin-bottom: 40px; 
+    width: 100%;
+    margin-bottom: 0 !important; /* Menghilangkan margin bawah lama agar lurus dengan teks */
 }
 
 .description-full-container h2 {
@@ -187,9 +202,9 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
 }
 .description-full-container p {
     color: #ffffff;    /* Warna teks isi deskripsi putih bersih */
-    font-size: 14px;
+    
+    font-size: 16px;
     line-height: 1.6;  /* Mengatur jarak antar baris agar nyaman dibaca */
-    margin-bottom: 10px; /* Jarak antar paragraf agar tidak menempel */
 }
 /* Memastikan frame video di dalamnya mengisi penuh ruang pembungkus */
 .video-container iframe {
@@ -242,8 +257,10 @@ body, p, .desc-text-light, .desc-list li, .file-name, .file-size {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 25px; /* Jarak antara logo Minecraft dengan kotak hitam di bawahnya */
+    margin-top: 30px;    /* KODE BARU: Memberikan jarak renggang dari batas paling atas layar */
+    margin-bottom: 15px;  /* Jarak bawah menuju ke kotak video & download card */
 }
+
 
 /* Mengatur ukuran dan responsivitas logo Minecraft */
 .minecraft-title-logo {
@@ -399,14 +416,13 @@ h1 {
     background-color: #ff2222; /* Tombol merah */
     color: white;
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 6px;
+    padding: 10px 20px;
     font-size: 14px;
     font-weight: 600;
-    font-family: 'MinecraftTen', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     letter-spacing: 0.5px;
     /* Stroke hitam ala tombol Mojang */
-    border: 2px solid #000000;
+    border: 1px solid #000000;
     /* Highlight terang di atas, gelap di bawah (efek 3D/bevel) + bayangan luar */
     box-shadow:
         inset 0 3px 0 rgba(255, 255, 255, 0.35),
@@ -430,11 +446,10 @@ h1 {
     background: #222222;
     border: 1px solid #ff0000;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 0px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 .gpu-box-title {
     color: #ffffff;
     font-family: 'NotoSans', sans-serif !important;
@@ -453,29 +468,34 @@ h1 {
     padding: 10px;
     background-color: #181818;
     border: 1px solid #444444;
-    border-radius: 6px;
     color: #ffffff;
     font-family: 'NotoSans', sans-serif !important;
     font-size: 14px;
     outline: none;
 }
 #gpuInput:focus {
-    border-color: #ff2222;
+    border-color: #ff0000;
 }
 #gpuCheckBtn {
-    background-color: #ff2222;
+    background-color: #ff2222; /* Tombol merah */
     color: white;
-    border: none;
-    padding: 0 20px;
-    border-radius: 6px;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
     font-family: 'NotoSans', sans-serif !important;
-    font-weight: 700;
-    cursor: pointer;
-    flex-shrink: 0; /* Mencegah tombol ikut menyusut/gepeng, biarkan input yang menyesuaikan */
-    transition: background 0.2s;
+    letter-spacing: 0.5px;
+    /* Stroke hitam ala tombol Mojang */
+    border: 1px solid #000000;
+    /* Highlight terang di atas, gelap di bawah (efek 3D/bevel) + bayangan luar */
+    box-shadow:
+        inset 0 3px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -4px 0 rgba(0, 0, 0, 0.35),
+        0 3px 0 rgba(0, 0, 0, 0.6);
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 #gpuCheckBtn:hover {
-    background-color: #cc1111;
+    background-color: #ff0000;
 }
 /* Di layar sangat sempit (HP kecil seperti iPhone SE), tumpuk input dan tombol ke bawah agar lebih lega */
 @media (max-width: 360px) {
@@ -558,16 +578,16 @@ h1 {
 /* Mengatur Kontainer Utama Footer agar Panjang Mentok Kanan-Kiri yang Presisi */
 .site-footer {
     background-color: #121212 !important;
-    border-top: 1px solid #222222;
+    border-top: 1px solid #ff0000;
     /* RUMUS BARU: Lebar 100vw penuh, ditarik ke kiri-kanan sebesar 15px (mengompensasi padding body) */
     width: 100vw !important;
     margin-left: -15px !important;
     margin-right: -15px !important;
     /* Ruang bagian dalam kotak footer */
     padding: 40px 60px 80px 60px;         
-    margin-top: 60px; 
+    margin-top: 12px; 
     margin-bottom: 0 !important;          
-    font-family: 'RaidenCustomLight', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     box-sizing: border-box;
 }
 /* Mengunci teks di dalam agar tetap rapi di tengah monitor besar */
@@ -599,7 +619,7 @@ h1 {
     object-fit: contain;
 }
 .footer-brand-text h3 {
-    font-family: 'RaidenCustomBold', sans-serif !important;
+    font-family: 'NotoSans', sans-serif !important;
     color: #ff2222; /* Merah khas Raiden */
     font-size: 18px;
     margin-bottom: 4px;
@@ -624,16 +644,22 @@ h1 {
 }
 
 .scroll-to-download-btn {
-    background-color: #ff2222;
-    color: #ffffff;
+    background-color: #ff2222; /* Tombol merah */
+    color: white;
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-family: 'RaidenCustomBold', sans-serif !important;
-    font-weight: 700;
-    transition: background 0.2s, transform 0.2s;
-    box-shadow: 0 4px 10px rgba(255, 34, 34, 0.2);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'NotoSans', sans-serif !important;
+    letter-spacing: 0.5px;
+    /* Stroke hitam ala tombol Mojang */
+    border: 1px solid #000000;
+    /* Highlight terang di atas, gelap di bawah (efek 3D/bevel) + bayangan luar */
+    box-shadow:
+        inset 0 3px 0 rgba(255, 255, 255, 0.35),
+        inset 0 -4px 0 rgba(0, 0, 0, 0.35),
+        0 3px 0 rgba(0, 0, 0, 0.6);
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .scroll-to-download-btn:hover {
@@ -646,6 +672,7 @@ h1 {
     border-top: 1px solid #222222;
     margin-top: 30px;
     padding-top: 15px;
+    padding-bottom: 15px;
     text-align: center; /* Memaksa posisi teks berada tepat di tengah */
 }
 
@@ -653,23 +680,59 @@ h1 {
     color: #555555;
     font-size: 12px;
 }
+/* Mengatur tampilan jalur folder agar menarik dan bisa diklik */
+.copyable-path {
+    background-color: #222222;
+    color: #ffffff; /* Warna merah khas Raiden */
+    padding: 2px 8px;
+    border: 1px solid #7F0000;
+    font-family: monospace;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    word-break: break-all; /* Agar teks panjang tidak merusak layout mobile */
+    transition: background 0.2s, color 0.2s;
+}
+
+/* Efek saat kursor menyorot jalur folder */
+.copyable-path:hover {
+    background-color: #0037A5;
+    border-color: #0037A5;
+}
+
+/* Efek animasi kecil saat teks berhasil disalin */
+.copyable-path.copied {
+    color: #0037A5 !important;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
 
 /* Responsif HP: Membuat tampilan sejajar ke bawah jika dibuka dari mobile */
+/* KODE PERBAIKAN KHUSUS MOBILE: Mengembalikan layout HP agar rapi di tengah */
 @media (max-width: 768px) {
+    body {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 0px 12px 0px 12px !important; /* Memberikan jarak aman di kanan-kiri dan bawah layar HP */
+    }
+    /* Memastikan kontainer teks di dalam footer tegak lurus di tengah HP */
     .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 25px !important;
     }
     .footer-brand {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column !important;
+        align-items: center !important;
     }
     .footer-left {
-        align-items: center;
+        align-items: center !important;
     }
     .footer-right {
-        width: 100%;
-        justify-content: center;
+        width: 100% !important;
+        justify-content: center !important;
     }
 }
