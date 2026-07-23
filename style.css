@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    src: url('NotoSans.ttf') format('truetype');
 }
 /* 1. Daftarkan Font Tebal (OTF) */
 @font-face {
@@ -36,35 +37,31 @@ a {
 html {
     scroll-behavior: smooth; /* KODE UTAMA: Membuat semua efek lompatan link menjadi animasi gulir halus */
 }
-/* Pembungkus nama aplikasi dan sub-teks penjelasan */
-.app-info-wrapper {
-    display: flex;
-    flex-direction: column; /* Menyusun teks penjelasan tepat di bawah nama aplikasi */
-    gap: 4px;
-    min-width: 250px;       /* Memberi ruang lebar agar teks tidak terlalu menumpuk */
-}
+    /* KODE BARU: Merapikan baris launcher Android saat dibuka di layar HP */
+    .app-launcher-list li {
+        flex-direction: column !important; /* Memaksa nama teks dan tombol menumpuk ke bawah */
+        align-items: flex-start !important; /* Membuat semua konten rata kiri */
+        gap: 10px !important;              /* Jarak vertikal antar elemen */
+        margin-bottom: 25px !important;    /* Jarak renggang antar aplikasi */
+        width: 100% !important;
+    }
 
-/* Mengatur gaya tulisan penjelasan di bawah launcher */
-.app-subtext {
-    font-family: 'NotoSans', sans-serif !important;
-    font-weight: 300 !important;
-    color: #ffffff !important; /* Warna abu-abu terang agar terpisah secara visual dari judul */
-    font-size: 13px !important;
-    margin: 0 !important;
-    line-height: 1.4;
-    max-width: 30400px;         /* Membatasi lebar teks agar tidak menabrak tombol */
-}
+    .app-info-wrapper {
+        min-width: auto !important;        /* Membebaskan batasan lebar kaku di HP */
+        width: 100% !important;
+    }
 
-/* Memastikan baris item list tetap sejajar secara vertikal dengan tombol */
-.app-launcher-list li {
-    display: flex;
-    color: #ffffff !important; /* Warna abu-abu terang agar terpisah secara visual dari judul */
-    align-items: center;
-    justify-content: space-between; /* Memisahkan teks di kiri dan tombol badge di kanan */
-    max-width: 600px;               /* Batas lebar total baris list */
-    gap: 20px;
-    margin-bottom: 15px;            /* Jarak konsisten antar baris aplikasi */
-}
+    .app-subtext {
+        max-width: 100% !important;        /* Teks penjelasan bisa melebar penuh dengan aman */
+        margin-top: 5px !important;        /* Jarak tipis di bawah nama aplikasi */
+        font-size: 13px !important;
+    }
+
+    /* Menjaga ukuran tombol badge agar tetap konsisten dan tidak gepeng di HP */
+    .launcher-btn img {
+        height: 38px !important;           /* Mengunci tinggi tombol agar pas di layar HP */
+        width: auto !important;
+    }
 
 /* Setel ulang min-width app-name lama agar flexbox bekerja dengan fleksibel */
 .app-launcher-list .app-name {
@@ -73,7 +70,8 @@ html {
 
 /* Mengatur ukuran proporsional tombol Google Play dan GitHub badge */
 .app-launcher-list .badge-img {
-    height: 35px; /* Mengunci tinggi tombol agar serasi dengan ukuran teks */
+    margin-top: 5px !important;   
+    margin-bottom: -15px !important;
     width: auto;
     object-fit: contain;
     display: block;
@@ -81,24 +79,21 @@ html {
 }
 /* Mengatur dekorasi tautan nama aplikasi agar terlihat rapi */
 .app-name-link {
+    font-weight: bold; /* Memberi efek tebal saat diarahkan kursor */
+    font-family: 'MinecraftTen', sans-serif !important; /* Memberi efek font MinecraftTen saat diarahkan kursor */
     text-decoration: underline; /* Memberi efek garis bawah saat diarahkan kursor */
     color: #ff0000; /* Memberi efek warna merah saat diarahkan kursor */
 }
 .app-name-link:hover {
-    text-decoration: none;
+    color: #ffffff; /* Memberi efek warna merah saat diarahkan kursor */
+
 }
-/* Menyamakan ukuran semua badge/tombol download */
-.launcher-btn img {
-    height: 40px;      /* Atur tinggi yang seragam untuk semua ikon */
-    width: auto;       /* Biarkan lebar menyesuaikan secara proporsional */
-    display: block;
-    object-fit: contain; /* Memastikan gambar tidak terdistorsi atau terpotong */
+/* Khusus memaksa ukuran lencana GitHub agar membesar seimbang di layar HP */
+.app-launcher-list .github-badge {
+    margin-top: 5px !important; /* Naikkan ukurannya agar gambar intinya seimbang dengan Google Play */
+    width: auto !important;
 }
-/* Mengunci ukuran badge GitHub secara langsung agar pas dan seimbang */
-.github-badge {
-    height: 52px !important;    /* Menaikkan tinggi gambar inti agar pas dengan Google Play */
-    margin-left: -5px; 
-}
+
 /* Animasi membesar halus saat tombol disorot kursor */
 .app-launcher-list .badge-img:hover {
     transform: scale(1.05);
@@ -711,6 +706,7 @@ h1 {
 /* KODE PERBAIKAN KHUSUS MOBILE: Mengembalikan layout HP agar rapi di tengah */
 @media (max-width: 768px) {
     body {
+        overflow-x: hidden; 
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;

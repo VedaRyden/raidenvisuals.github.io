@@ -212,10 +212,10 @@ function copyPath(element) {
     // Menyalin teks ke clipboard system
     navigator.clipboard.writeText(textToCopy).then(() => {
         // Mainkan efek suara klik jika Anda ingin menghubungkannya dengan audio kemarin
-        const soundLauncher = document.getElementById('launcherClickSound');
-        if (soundLauncher) {
-            soundLauncher.currentTime = 0;
-            soundLauncher.play().catch(() => {});
+        const soundClick = document.getElementById('soundClick');
+        if (soundClick) {
+            soundClick.currentTime = 0;
+            soundClick.play().catch(() => {});
         }
 
         // Mengubah tampilan sementara sebagai indikator sukses menyalin
