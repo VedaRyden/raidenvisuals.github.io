@@ -22,9 +22,23 @@
 /* 3. Daftarkan Font Body Text yang Baru (Noto Sans) */
 @font-face {
     font-family: 'NotoSans';
-    src: url('NotoSans.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
+    src: url('NotoSans-Regular.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.noto-sans {
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+@font-face {
+  font-family: 'Gellix';
+  src: url('Gellix-TRIAL-Regular.otf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.gellix {
+  font-family: 'Gellix', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 a {
   font-family: inherit; 
@@ -80,11 +94,13 @@ html {
 /* Mengatur dekorasi tautan nama aplikasi agar terlihat rapi */
 .app-name-link {
     font-weight: bold; /* Memberi efek tebal saat diarahkan kursor */
-    font-family: 'MinecraftTen', sans-serif !important; /* Memberi efek font MinecraftTen saat diarahkan kursor */
+    font-family: 'Gellix', sans-serif !important; /* Memberi efek font MinecraftTen saat diarahkan kursor */
     text-decoration: underline; /* Memberi efek garis bawah saat diarahkan kursor */
     color: #ff0000; /* Memberi efek warna merah saat diarahkan kursor */
 }
 .app-name-link:hover {
+        font-family: 'Gellix', sans-serif !important; /* Memberi efek font MinecraftTen saat diarahkan kursor */
+
     color: #ffffff; /* Memberi efek warna merah saat diarahkan kursor */
 
 }
